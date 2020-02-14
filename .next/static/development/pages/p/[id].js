@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/about.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/p/[id].js"],{
 
 /***/ "./components/Header.jsx":
 /*!*******************************!*\
@@ -4624,21 +4624,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fabout.jsx!./":
-/*!******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fabout.jsx ***!
-  \******************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fp%2F%5Bid%5D&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fp%2F%5Bid%5D.jsx!./":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fp%2F%5Bid%5D&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fp%2F%5Bid%5D.jsx ***!
+  \********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/about", function() {
-      var mod = __webpack_require__(/*! ./pages/about.jsx */ "./pages/about.jsx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/p/[id]", function() {
+      var mod = __webpack_require__(/*! ./pages/p/[id].jsx */ "./pages/p/[id].jsx")
       if(true) {
-        module.hot.accept(/*! ./pages/about.jsx */ "./pages/about.jsx", function() {
-          if(!next.router.components["/about"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/about.jsx */ "./pages/about.jsx")
-          next.router.update("/about", updatedPage)
+        module.hot.accept(/*! ./pages/p/[id].jsx */ "./pages/p/[id].jsx", function() {
+          if(!next.router.components["/p/[id]"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/p/[id].jsx */ "./pages/p/[id].jsx")
+          next.router.update("/p/[id]", updatedPage)
         })
       }
       return mod
@@ -9693,10 +9693,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/about.jsx":
-/*!*************************!*\
-  !*** ./pages/about.jsx ***!
-  \*************************/
+/***/ "./pages/p/[id].jsx":
+/*!**************************!*\
+  !*** ./pages/p/[id].jsx ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -9704,45 +9704,50 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.jsx");
-var _jsxFileName = "/home/dev/lfz/nextjs/pages/about.jsx";
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Layout */ "./components/Layout.jsx");
+var _jsxFileName = "/home/dev/lfz/nextjs/pages/p/[id].jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
- // import withLayout from '../components/Layout-HOF';
 
-var About = function About() {
+
+var Post = function Post() {
+  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])();
   return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 8
     },
     __self: this
-  }, __jsx("p", {
+  }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 9
     },
     __self: this
-  }, "This is the about page"));
-}; // Using layout as a higher order component.
-// const Page = () => <p>This is the about page</p>;
-// export default withLayout(Page);
+  }, router.query.id), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, "This is the blog post content with ID"));
+};
 
-
-/* harmony default export */ __webpack_exports__["default"] = (About);
+/* harmony default export */ __webpack_exports__["default"] = (Post);
 
 /***/ }),
 
 /***/ 3:
-/*!**********************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fabout.jsx ***!
-  \**********************************************************************************************************************/
+/*!************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fp%2F%5Bid%5D&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fp%2F%5Bid%5D.jsx ***!
+  \************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fabout&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fabout.jsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fabout&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fabout.jsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fp%2F%5Bid%5D&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fp%2F%5Bid%5D.jsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fp%2F%5Bid%5D&absolutePagePath=%2Fhome%2Fdev%2Flfz%2Fnextjs%2Fpages%2Fp%2F%5Bid%5D.jsx!./");
 
 
 /***/ }),
@@ -9759,4 +9764,4 @@ module.exports = dll_5f137288facb1107b491;
 /***/ })
 
 },[[3,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=about.js.map
+//# sourceMappingURL=[id].js.map

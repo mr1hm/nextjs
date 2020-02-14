@@ -1888,66 +1888,88 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
  // import withLayout from '../components/Layout-HOF';
+// Create Dynamic Pages
+// const PostLink = props => (
+//   <li>
+//     <Link href={`post?title=${props.title}` as=""}>
+//       <a>{props.title}</a>
+//     </Link>
+//   </li>
+// );
+// export default function Blog() {
+//   return (
+//     <Layout>
+//       <h1>My Blog</h1>
+//       <ul>
+//         <PostLink title="Hello Next.js" />
+//         <PostLink title="Basics of Next.js" />
+//         <PostLink title="Deploy apps with Zeit" />
+//       </ul>
+//     </Layout>
+//   );
+// }
+// Clean URLs with Dynamic Routing
 
 const PostLink = props => __jsx("li", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 7
+    lineNumber: 30
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: `post?title=${props.title}`,
+  href: "/p/[id]",
+  as: `/p/${props.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8
+    lineNumber: 31
   },
   __self: undefined
 }, __jsx("a", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 32
   },
   __self: undefined
-}, props.title)));
+}, props.id)));
 
 function Blog() {
   return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 39
     },
     __self: this
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 40
     },
     __self: this
   }, "My Blog"), __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 41
     },
     __self: this
   }, __jsx(PostLink, {
-    title: "Hello Next.js",
+    id: "hello-nextjs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 42
     },
     __self: this
   }), __jsx(PostLink, {
-    title: "Basics of Next.js",
+    id: "basics-of-nextjs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 43
     },
     __self: this
   }), __jsx(PostLink, {
-    title: "Deploy apps with Zeit",
+    id: "deploy-nextjs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 44
     },
     __self: this
   })));
