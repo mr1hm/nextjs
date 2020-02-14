@@ -63,10 +63,10 @@ var Header = function Header() {
 
 /***/ }),
 
-/***/ "./components/Layout-HOF.jsx":
-/*!***********************************!*\
-  !*** ./components/Layout-HOF.jsx ***!
-  \***********************************/
+/***/ "./components/Layout.jsx":
+/*!*******************************!*\
+  !*** ./components/Layout.jsx ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -75,10 +75,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.jsx");
-var _jsxFileName = "/home/dev/lfz/nextjs/components/Layout-HOF.jsx";
+var _jsxFileName = "/home/dev/lfz/nextjs/components/Layout.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // Layout As A Higher Order Component
 
 var layoutStyle = {
   margin: 20,
@@ -86,32 +85,24 @@ var layoutStyle = {
   border: '1px solid #DDD'
 };
 
-var withLayout = function withLayout(Page) {
-  return function () {
-    return __jsx("div", {
-      style: layoutStyle,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
-    }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: this
-    }), __jsx(Page, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }));
-  };
+var Layout = function Layout(props) {
+  return __jsx("div", {
+    style: layoutStyle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }), props.children);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (withLayout);
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
 
 /***/ }),
 
@@ -9714,30 +9705,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
-/* harmony import */ var _components_Layout_HOF__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout-HOF */ "./components/Layout-HOF.jsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.jsx");
 var _jsxFileName = "/home/dev/lfz/nextjs/pages/about.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import Layout from '../components/Layout';
 
- // const About = () => (
-//   <Layout>
-//     <p>This is the about page</p>
-//   </Layout>
-// );
-// Using layout as a higher order component.
+ // import withLayout from '../components/Layout-HOF';
 
-var Page = function Page() {
-  return __jsx("p", {
+var About = function About() {
+  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 6
     },
     __self: this
-  }, "This is the about page");
-};
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, "This is the about page"));
+}; // Using layout as a higher order component.
+// const Page = () => <p>This is the about page</p>;
+// export default withLayout(Page);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_components_Layout_HOF__WEBPACK_IMPORTED_MODULE_2__["default"])(Page));
+
+/* harmony default export */ __webpack_exports__["default"] = (About);
 
 /***/ }),
 
