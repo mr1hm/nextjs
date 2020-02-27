@@ -1876,15 +1876,21 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Blog; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.jsx");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.jsx");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/home/dev/lfz/nextjs/pages/index.jsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
  // import withLayout from '../components/Layout-HOF';
@@ -1909,71 +1915,26 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 //   );
 // }
 // Clean URLs with Dynamic Routing
-
-const PostLink = props => __jsx("li", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 30
-  },
-  __self: undefined
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/p/[id]",
-  as: `/p/${props.id}`,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 31
-  },
-  __self: undefined
-}, __jsx("a", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 32
-  },
-  __self: undefined
-}, props.id)));
-
-function Blog() {
-  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }, "My Blog"), __jsx("ul", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
-  }, __jsx(PostLink, {
-    id: "hello-nextjs",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }), __jsx(PostLink, {
-    id: "basics-of-nextjs",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }), __jsx(PostLink, {
-    id: "deploy-nextjs",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  })));
-} // export default function Index() {
+// const PostLink = props => (
+//   <li>
+//     <Link href="/p/[id]" as={`/p/${props.id}`}>
+//       <a>{props.id}</a>
+//     </Link>
+//   </li>
+// );
+// export default function Blog() {
+//   return (
+//     <Layout>
+//       <h1>My Blog</h1>
+//       <ul>
+//         <PostLink id="hello-nextjs" />
+//         <PostLink id="basics-of-nextjs" />
+//         <PostLink id="deploy-nextjs" />
+//       </ul>
+//     </Layout>
+//   );
+// }
+// export default function Index() {
 //   return (
 //     <Layout>
 //       <h1>Hello Next.js</h1>
@@ -1983,6 +1944,109 @@ function Blog() {
 // Using Layout as a higher order component.
 // const Page = () => <p>Hello Next.js</p>;
 // export default withLayout(Page);
+// Fetching Data for Pages
+// const Index = props => (
+//   <Layout>
+//     <h1>Batman TV Shows</h1>
+//     <ul>
+//       {props.shows.map(show => (
+//         <li key={show.id}>
+//           <Link href="/p/[id]" as={`/p/${show.id}`}>
+//             <a>{show.name}</a>
+//           </Link>
+//         </li>
+//       ))}
+//     </ul>
+//   </Layout>
+// );
+// Index.getInitialProps = async function () {
+//   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
+//   const data = await res.json();
+//   // console.log(data);
+//   console.log(`Show data fetched. Count: ${data.length}`); // This console log only shows in terminal because it's server-side rendered. It will show if you navigate to the home page since it's client-side navigation.
+//   return { shows: data.map(entry => entry.show) }
+// };
+// export default Index;
+// Check to see if it's client-side navigation by:
+// - Use npm run build
+// - Use npm start (gets production build going)
+// - Look at network tab in console.
+// - Click on a navigation link and see if you see any activity in the network tab.
+// - Type "document" means that it's server-side navigation (if you see a bunch of javascript pages being loaded along with a "document" type when you visit the page, it's most likely client-side navigation)
+// - If you don't see any activity while navigating in the network tab, it's client-side navigation.
+// Client-side navigation means that the website's pages have already been downloaded when you first connected to the website and the browser is loading them upon clicking a link.
+
+function getPosts() {
+  return [{
+    id: 'hello-nextjs',
+    title: 'Hello Next.js'
+  }, {
+    id: 'basics-nextjs',
+    title: 'Learn Next.js is awesome'
+  }, {
+    id: 'deploy-nextjs',
+    title: 'Deploy apps with ZEIT'
+  }];
+}
+
+const PostLink = ({
+  post
+}) => __jsx("li", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 112
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/p/[id]",
+  as: `/p/${post.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 113
+  },
+  __self: undefined
+}, __jsx("a", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 114
+  },
+  __self: undefined
+}, post.title)));
+
+function Blog() {
+  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121
+    },
+    __self: this
+  }, __jsx("h1", {
+    className: "jsx-344512576",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 122
+    },
+    __self: this
+  }, "My Blog"), __jsx("ul", {
+    className: "jsx-344512576",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 123
+    },
+    __self: this
+  }, getPosts().map(post => __jsx(PostLink, {
+    key: post.id,
+    post: post,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 125
+    },
+    __self: this
+  }))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "344512576",
+    __self: this
+  }, "h1.jsx-344512576,a.jsx-344512576{font-family:'Arial';}ul.jsx-344512576{padding:0;}li.jsx-344512576{list-style:none;margin:5px 0;}a.jsx-344512576{-webkit-text-decoration:none;text-decoration:none;color:blue;}a.jsx-344512576:hover{opacity:0.6;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Rldi9sZnovbmV4dGpzL3BhZ2VzL2luZGV4LmpzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUErSGtCLEFBSStCLEFBSVYsQUFJTSxBQUtLLEFBS1QsVUFiZCxFQWNBLElBVmUsSUFSZixTQVNBLHFCQUlhLFdBQ2IiLCJmaWxlIjoiL2hvbWUvZGV2L2xmei9uZXh0anMvcGFnZXMvaW5kZXguanN4Iiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IExpbmsgZnJvbSAnbmV4dC9saW5rJztcbmltcG9ydCBIZWFkZXIgZnJvbSAnLi4vY29tcG9uZW50cy9IZWFkZXInO1xuaW1wb3J0IExheW91dCBmcm9tICcuLi9jb21wb25lbnRzL0xheW91dCc7XG5pbXBvcnQgZmV0Y2ggZnJvbSAnaXNvbW9ycGhpYy11bmZldGNoJztcbi8vIGltcG9ydCB3aXRoTGF5b3V0IGZyb20gJy4uL2NvbXBvbmVudHMvTGF5b3V0LUhPRic7XG5cbi8vIENyZWF0ZSBEeW5hbWljIFBhZ2VzXG4vLyBjb25zdCBQb3N0TGluayA9IHByb3BzID0+IChcbi8vICAgPGxpPlxuLy8gICAgIDxMaW5rIGhyZWY9e2Bwb3N0P3RpdGxlPSR7cHJvcHMudGl0bGV9YCBhcz1cIlwifT5cbi8vICAgICAgIDxhPntwcm9wcy50aXRsZX08L2E+XG4vLyAgICAgPC9MaW5rPlxuLy8gICA8L2xpPlxuLy8gKTtcblxuLy8gZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQmxvZygpIHtcbi8vICAgcmV0dXJuIChcbi8vICAgICA8TGF5b3V0PlxuLy8gICAgICAgPGgxPk15IEJsb2c8L2gxPlxuLy8gICAgICAgPHVsPlxuLy8gICAgICAgICA8UG9zdExpbmsgdGl0bGU9XCJIZWxsbyBOZXh0LmpzXCIgLz5cbi8vICAgICAgICAgPFBvc3RMaW5rIHRpdGxlPVwiQmFzaWNzIG9mIE5leHQuanNcIiAvPlxuLy8gICAgICAgICA8UG9zdExpbmsgdGl0bGU9XCJEZXBsb3kgYXBwcyB3aXRoIFplaXRcIiAvPlxuLy8gICAgICAgPC91bD5cbi8vICAgICA8L0xheW91dD5cbi8vICAgKTtcbi8vIH1cblxuLy8gQ2xlYW4gVVJMcyB3aXRoIER5bmFtaWMgUm91dGluZ1xuLy8gY29uc3QgUG9zdExpbmsgPSBwcm9wcyA9PiAoXG4vLyAgIDxsaT5cbi8vICAgICA8TGluayBocmVmPVwiL3AvW2lkXVwiIGFzPXtgL3AvJHtwcm9wcy5pZH1gfT5cbi8vICAgICAgIDxhPntwcm9wcy5pZH08L2E+XG4vLyAgICAgPC9MaW5rPlxuLy8gICA8L2xpPlxuLy8gKTtcblxuLy8gZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQmxvZygpIHtcbi8vICAgcmV0dXJuIChcbi8vICAgICA8TGF5b3V0PlxuLy8gICAgICAgPGgxPk15IEJsb2c8L2gxPlxuLy8gICAgICAgPHVsPlxuLy8gICAgICAgICA8UG9zdExpbmsgaWQ9XCJoZWxsby1uZXh0anNcIiAvPlxuLy8gICAgICAgICA8UG9zdExpbmsgaWQ9XCJiYXNpY3Mtb2YtbmV4dGpzXCIgLz5cbi8vICAgICAgICAgPFBvc3RMaW5rIGlkPVwiZGVwbG95LW5leHRqc1wiIC8+XG4vLyAgICAgICA8L3VsPlxuLy8gICAgIDwvTGF5b3V0PlxuLy8gICApO1xuLy8gfVxuXG4vLyBleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBJbmRleCgpIHtcbi8vICAgcmV0dXJuIChcbi8vICAgICA8TGF5b3V0PlxuLy8gICAgICAgPGgxPkhlbGxvIE5leHQuanM8L2gxPlxuLy8gICAgIDwvTGF5b3V0PlxuLy8gICApO1xuLy8gfVxuXG4vLyBVc2luZyBMYXlvdXQgYXMgYSBoaWdoZXIgb3JkZXIgY29tcG9uZW50LlxuLy8gY29uc3QgUGFnZSA9ICgpID0+IDxwPkhlbGxvIE5leHQuanM8L3A+O1xuXG4vLyBleHBvcnQgZGVmYXVsdCB3aXRoTGF5b3V0KFBhZ2UpO1xuXG4vLyBGZXRjaGluZyBEYXRhIGZvciBQYWdlc1xuLy8gY29uc3QgSW5kZXggPSBwcm9wcyA9PiAoXG4vLyAgIDxMYXlvdXQ+XG4vLyAgICAgPGgxPkJhdG1hbiBUViBTaG93czwvaDE+XG4vLyAgICAgPHVsPlxuLy8gICAgICAge3Byb3BzLnNob3dzLm1hcChzaG93ID0+IChcbi8vICAgICAgICAgPGxpIGtleT17c2hvdy5pZH0+XG4vLyAgICAgICAgICAgPExpbmsgaHJlZj1cIi9wL1tpZF1cIiBhcz17YC9wLyR7c2hvdy5pZH1gfT5cbi8vICAgICAgICAgICAgIDxhPntzaG93Lm5hbWV9PC9hPlxuLy8gICAgICAgICAgIDwvTGluaz5cbi8vICAgICAgICAgPC9saT5cbi8vICAgICAgICkpfVxuLy8gICAgIDwvdWw+XG4vLyAgIDwvTGF5b3V0PlxuLy8gKTtcblxuLy8gSW5kZXguZ2V0SW5pdGlhbFByb3BzID0gYXN5bmMgZnVuY3Rpb24gKCkge1xuLy8gICBjb25zdCByZXMgPSBhd2FpdCBmZXRjaCgnaHR0cHM6Ly9hcGkudHZtYXplLmNvbS9zZWFyY2gvc2hvd3M/cT1iYXRtYW4nKTtcbi8vICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlcy5qc29uKCk7XG5cbi8vICAgLy8gY29uc29sZS5sb2coZGF0YSk7XG4vLyAgIGNvbnNvbGUubG9nKGBTaG93IGRhdGEgZmV0Y2hlZC4gQ291bnQ6ICR7ZGF0YS5sZW5ndGh9YCk7IC8vIFRoaXMgY29uc29sZSBsb2cgb25seSBzaG93cyBpbiB0ZXJtaW5hbCBiZWNhdXNlIGl0J3Mgc2VydmVyLXNpZGUgcmVuZGVyZWQuIEl0IHdpbGwgc2hvdyBpZiB5b3UgbmF2aWdhdGUgdG8gdGhlIGhvbWUgcGFnZSBzaW5jZSBpdCdzIGNsaWVudC1zaWRlIG5hdmlnYXRpb24uXG5cbi8vICAgcmV0dXJuIHsgc2hvd3M6IGRhdGEubWFwKGVudHJ5ID0+IGVudHJ5LnNob3cpIH1cbi8vIH07XG5cbi8vIGV4cG9ydCBkZWZhdWx0IEluZGV4O1xuXG4vLyBDaGVjayB0byBzZWUgaWYgaXQncyBjbGllbnQtc2lkZSBuYXZpZ2F0aW9uIGJ5OlxuLy8gLSBVc2UgbnBtIHJ1biBidWlsZFxuLy8gLSBVc2UgbnBtIHN0YXJ0IChnZXRzIHByb2R1Y3Rpb24gYnVpbGQgZ29pbmcpXG4vLyAtIExvb2sgYXQgbmV0d29yayB0YWIgaW4gY29uc29sZS5cbi8vIC0gQ2xpY2sgb24gYSBuYXZpZ2F0aW9uIGxpbmsgYW5kIHNlZSBpZiB5b3Ugc2VlIGFueSBhY3Rpdml0eSBpbiB0aGUgbmV0d29yayB0YWIuXG4vLyAtIFR5cGUgXCJkb2N1bWVudFwiIG1lYW5zIHRoYXQgaXQncyBzZXJ2ZXItc2lkZSBuYXZpZ2F0aW9uIChpZiB5b3Ugc2VlIGEgYnVuY2ggb2YgamF2YXNjcmlwdCBwYWdlcyBiZWluZyBsb2FkZWQgYWxvbmcgd2l0aCBhIFwiZG9jdW1lbnRcIiB0eXBlIHdoZW4geW91IHZpc2l0IHRoZSBwYWdlLCBpdCdzIG1vc3QgbGlrZWx5IGNsaWVudC1zaWRlIG5hdmlnYXRpb24pXG4vLyAtIElmIHlvdSBkb24ndCBzZWUgYW55IGFjdGl2aXR5IHdoaWxlIG5hdmlnYXRpbmcgaW4gdGhlIG5ldHdvcmsgdGFiLCBpdCdzIGNsaWVudC1zaWRlIG5hdmlnYXRpb24uXG5cbi8vIENsaWVudC1zaWRlIG5hdmlnYXRpb24gbWVhbnMgdGhhdCB0aGUgd2Vic2l0ZSdzIHBhZ2VzIGhhdmUgYWxyZWFkeSBiZWVuIGRvd25sb2FkZWQgd2hlbiB5b3UgZmlyc3QgY29ubmVjdGVkIHRvIHRoZSB3ZWJzaXRlIGFuZCB0aGUgYnJvd3NlciBpcyBsb2FkaW5nIHRoZW0gdXBvbiBjbGlja2luZyBhIGxpbmsuXG5cblxuZnVuY3Rpb24gZ2V0UG9zdHMoKSB7XG4gIHJldHVybiBbXG4gICAgeyBpZDogJ2hlbGxvLW5leHRqcycsIHRpdGxlOiAnSGVsbG8gTmV4dC5qcycgfSxcbiAgICB7IGlkOiAnYmFzaWNzLW5leHRqcycsIHRpdGxlOiAnTGVhcm4gTmV4dC5qcyBpcyBhd2Vzb21lJyB9LFxuICAgIHsgaWQ6ICdkZXBsb3ktbmV4dGpzJywgdGl0bGU6ICdEZXBsb3kgYXBwcyB3aXRoIFpFSVQnIH1cbiAgXTtcbn1cblxuY29uc3QgUG9zdExpbmsgPSAoeyBwb3N0IH0pID0+IChcbiAgPGxpPlxuICAgIDxMaW5rIGhyZWY9XCIvcC9baWRdXCIgYXM9e2AvcC8ke3Bvc3QuaWR9YH0+XG4gICAgICA8YT57cG9zdC50aXRsZX08L2E+XG4gICAgPC9MaW5rPlxuICA8L2xpPlxuKVxuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBCbG9nKCkge1xuICByZXR1cm4gKFxuICAgIDxMYXlvdXQ+XG4gICAgICA8aDE+TXkgQmxvZzwvaDE+XG4gICAgICA8dWw+XG4gICAgICAgIHtnZXRQb3N0cygpLm1hcChwb3N0ID0+IChcbiAgICAgICAgICA8UG9zdExpbmsga2V5PXtwb3N0LmlkfSBwb3N0PXtwb3N0fSAvPlxuICAgICAgICApKX1cbiAgICAgIDwvdWw+XG4gICAgICA8c3R5bGUganN4PntgXG4gICAgICAgIGgxLFxuICAgICAgICBhIHtcbiAgICAgICAgICBmb250LWZhbWlseTogJ0FyaWFsJztcbiAgICAgICAgfVxuXG4gICAgICAgIHVsIHtcbiAgICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICB9XG5cbiAgICAgICAgbGkge1xuICAgICAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7XG4gICAgICAgICAgbWFyZ2luOiA1cHggMDtcbiAgICAgICAgfVxuXG4gICAgICAgIGEge1xuICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgICBjb2xvcjogYmx1ZTtcbiAgICAgICAgfVxuXG4gICAgICAgIGE6aG92ZXIge1xuICAgICAgICAgIG9wYWNpdHk6IDAuNjtcbiAgICAgICAgfVxuICAgICAgYH1cbiAgICAgIDwvc3R5bGU+XG4gICAgPC9MYXlvdXQ+XG4gICk7XG59XG4iXX0= */\n/*@ sourceURL=/home/dev/lfz/nextjs/pages/index.jsx */"));
+}
 
 /***/ }),
 
@@ -2053,6 +2117,17 @@ module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -2094,6 +2169,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/*!***********************************!*\
+  !*** external "styled-jsx/style" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
 
 /***/ }),
 
